@@ -3,4 +3,11 @@
     <string name="paste_an_url">paste an url here</string>
     <string name="new_wallpaper">new wallpaper</string>
     <string name="confirm">Confirm</string>
+    <string name="edit_the_picture">Edit the picture</string>
+    <string name="label_brush">brush</string>
+    <string name="done">Done</string>
+    <string name="rotation">Rotation</string>
+    <string name="appearance">Appearance</string>
+    <string name="brush">Brush</string>
+    <string name="close">Close</string>
 </resources>
