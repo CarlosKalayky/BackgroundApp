@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.ir.backend.js.compile
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -41,14 +43,18 @@ android {
 }
 
 dependencies {
-    implementation("com.squareup.picasso:picasso:2.8")
+    implementation("jp.co.cyberagent.android:gpuimage:2.1.0")
+//    implementation("com.theartofdev.edmodo:android-image-cropper:2.8.0")
+    implementation(libs.picasso)
+    implementation(libs.android.image.cropper)
+    implementation(libs.glide)
+//    api("api 'com.theartofdev.edmodo:android-image-cropper:2.8.+")
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
 
-    implementation("com.google.dagger:hilt-android:2.48")
-    kapt("com.google.dagger:hilt-android-compiler:2.48")
+    implementation(libs.androidx.viewpager2)
 
-    implementation("androidx.viewpager2:viewpager2:1.1.0")
-
-    implementation("com.burhanrashid52:photoeditor:3.0.2")
+    implementation(libs.burhanrashid52.photoeditor)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

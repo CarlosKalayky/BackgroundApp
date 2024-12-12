@@ -11,15 +11,16 @@
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
-        android:orientation="horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_end="?attr/actionBarSize"
-        />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="100dp" />
 
     <ja.burhanrashid52.photoeditor.PhotoEditorView
+        android:id="@+id/photoEditorView"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@+id/rvConstraintTools"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -67,12 +68,26 @@
         app:layout_constraintBottom_toTopOf="@+id/rvConstraintTools"
         app:layout_constraintStart_toEndOf="@+id/imgGallery"
         />
+    <TextView
+        android:id="@+id/ivBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#99000000"
+        android:padding="8dp"
+        android:text="@string/forBackground"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/rvConstraintTools"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
     <ImageView
         android:id="@+id/imgClose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:src="@drawable/ic_close"
+        android:src="@drawable/ic_save"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline"
@@ -92,7 +107,7 @@
         tools:listitem="@layout/row_editing_tools"
         />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tvFilterView"
+        android:id="@+id/rvFilterView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/tool_bg"
@@ -106,7 +121,7 @@
         android:id="@+id/txtCurrentTool"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginBottom="20dp"
         android:singleLine="true"
         android:text="@string/app_name"
         android:textColor="@color/white"
@@ -116,11 +131,12 @@
         app:layout_constraintTop_toBottomOf="@id/guideline"
         />
     <ImageView
+        android:visibility="gone"
         android:id="@+id/imgSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/ic_save"
-        android:layout_margin="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline"

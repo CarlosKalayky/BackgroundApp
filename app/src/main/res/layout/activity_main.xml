@@ -17,9 +17,30 @@
         app:layout_constraintBottom_toTopOf="@id/etURL"
         />
 
+    <jp.co.cyberagent.android.gpuimage.GPUImageView
+        android:id="@+id/gpuimageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:gpuimage_show_loading="false"
+        app:gpuimage_surface_type="texture_view"
+        android:visibility="gone"/> <!-- surface_view or texture_view -->
+
+<!--    <com.canhub.cropper.CropImageView-->
+<!--        android:id="@+id/cropImageView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/etURL"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        tools:visibility="visible"-->
+<!--        android:visibility="gone"/>-->
+
 
     <EditText
         android:id="@+id/etURL"
+        android:autofillHints=""
+        android:minHeight="48dp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:hint="@string/paste_an_url"
@@ -29,7 +50,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/flButtons"
         android:layout_margin="20dp"
-        />
+        tools:ignore="TextFields" />
 
     <FrameLayout
         android:id="@+id/flButtons"
@@ -59,15 +80,53 @@
 
     </FrameLayout>
 
+    <LinearLayout
+        android:id="@+id/otherButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/flButtons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        >
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnEdit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
         android:text="@string/edit_the_picture"
         app:layout_constraintTop_toBottomOf="@+id/flButtons"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="10dp"/>
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        />
+        <Button
+            android:id="@+id/btnGallery"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:shadowRadius="50.0"
+            android:textSize="20sp"
+            android:text="@string/gallery"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/brown_color_picker"
+            app:cornerRadius="0dp"
+            />
+        <Button
+            android:id="@+id/btnNew"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:shadowRadius="50.0"
+            android:textSize="12sp"
+            android:text="@string/other"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/brown_color_picker"
+            app:cornerRadius="0dp"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
